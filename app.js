@@ -5878,9 +5878,6 @@ function append_files_to_list(path, files) {
             <div class="mdui-col-sm-2 text-center">
 	            <button onclick="window.open('${ddl_link}','_self')" class="btn btn-secondary">
                 <i class="icon-dl bi bi-download"></i>
-                <span class="text-dl">
-                Download
-                </span>
               </button>
             </div>
 	      </li>`;
