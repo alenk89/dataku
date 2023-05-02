@@ -5865,14 +5865,16 @@ function append_files_to_list(path, files) {
             if (item["size"] === "") {
                 item["size"] = "— — —";
             }
-            html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
+            html += `<li class="mdui-list-item file mdui-ripple" target="_blank">
+            <a gd-type="${item.mimeType}" href="${p}" class="${c}">
 	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
 	          </div>
+              </a>
 	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
 	          <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
-	          </a>
+	          
             <div class="mdui-col-sm-2 text-center">
 	            <button onclick="window.open('${ddl_link}','_self')" class="btn btn-secondary">
                 <i class="icon-dl bi bi-download"></i>
@@ -6024,14 +6026,17 @@ function append_search_result_to_list(files) {
             if (item["size"] === "") {
                 item["size"] = "— — —";
             }
-            html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a id="${item["id"]}" gd-type="${item.mimeType}" onclick="onSearchResultItemClick(this)" class="${c}">
+            html += `
+            <li class="mdui-list-item file mdui-ripple" target="_blank">
+            <a id="${item["id"]}" gd-type="${item.mimeType}" onclick="onSearchResultItemClick(this)" class="${c}">
 	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
 	          </div>
+              </a>
 	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	          <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
-	          </a>
+	          <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
+	          
 	      </li>`;
         }
     }
