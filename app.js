@@ -1,5 +1,4 @@
 /*! jQuery v3.4.1 | (c) JS Foundation and other contributors | jquery.org/license */
-/*! BankFileGSM | Alenk Iliwua */
 !(function (e, t) {
   "use strict";
   "object" == typeof module && "object" == typeof module.exports
@@ -5570,7 +5569,7 @@ function init() {
     `mdui-theme-primary-${UI.main_color} mdui-theme-accent-${UI.accent_color}`
   );
   var html = `
-<div class="mdui-container-fluid">
+<div class="mdui-container">
 	<div class="mdui-container-fluid">
 		<div id="nav" class="mdui-toolbar nexmoe-item nav-style"> </div>
     </div>
@@ -5579,7 +5578,7 @@ function init() {
 		<div id="content" class="nexmoe-item"></div>
 	 	<div id="readme_md" class="mdui-typo nexmoe-item" style="display:none; padding: 20px 0;"></div>
   </div>
-  <div class="mdui-center mdui-text-center mdui-text-color-blue-grey-5001">${UI.footer_text}</div>
+  <div class="mdui-center mdui-text-center mdui-text-color-blue-grey-5001" style="margin-bottom: 20px">${UI.footer_text}</div>
   `;
   if (UI.credits) {
     html += `
@@ -5678,9 +5677,7 @@ function nav(path) {
     } >${name}</option>`;
   });
   html += `</select><div class="mdui-toolbar nav-style dummyclass3" style="margin-top:0px!important">`;
-  html += `
-    <a href="/${cur}:/" class="mdui-typo-headline folder" style="background-color:transparent;display:none;">Firmware Official</a>
-  `;
+  html += `<a href="/${cur}:/" class="mdui-typo-headline folder" style="background-color:transparent">${document.siteName}</a>`;
   if (!model.is_search_page) {
     var arr = path.trim("/").split("/");
     var p = "/";
@@ -5693,14 +5690,30 @@ function nav(path) {
         if (n == "") {
           break;
         }
-        html += `
-        <i class="mdui-icon material-icons mdui-icon-dark folder" style="margin:0;">chevron_right</i>
-        <a class="folder" style="background-color:transparent;max-width:230px" href="/${cur}:${p}">${n}</a>
-        `;
+        html += `<i class="mdui-icon material-icons mdui-icon-dark folder" style="margin:0;">chevron_right</i><a class="folder" style="background-color:transparent;max-width:230px" href="/${cur}:${p}">${n}</a>`;
       }
     }
   }
   html += `</div>`;
+  var search_text = model.is_search_page ? model.q || "" : "";
+  const isMobile = Os.isMobile;
+  var search_bar = `<div class="mdui-toolbar-spacer"></div>
+        <div id="search_bar" class="mdui-textfield mdui-textfield-expandable mdui-float-right ${
+          model.is_search_page ? "mdui-textfield-expanded" : ""
+        }" style="max-width:${isMobile ? 300 : 400}px">
+            <button class="mdui-textfield-icon mdui-btn mdui-btn-icon" onclick="if($('#search_bar').hasClass('mdui-textfield-expanded') && $('#search_bar_form>input').val()) $('#search_bar_form').submit(); $('.mdui-select').addClass('hidedropdown');">
+                <i class="mdui-icon material-icons">search</i>
+            </button>
+            <form id="search_bar_form" method="get" action="/${cur}:search">
+            <input class="mdui-textfield-input" type="text" name="q" placeholder="Search in current index" value="${search_text}"/>
+            </form>
+            <button class="mdui-textfield-close mdui-btn mdui-btn-icon" onclick="$('.mdui-select').removeClass('hidedropdown');"><i class="mdui-icon material-icons">close</i></button>
+        </div>
+        <button class="mdui-textfield-icon mdui-btn mdui-btn-icon dummyclass2" onclick="window.open('${UI.helpURL}','_blank')">
+          <i class="mdui-icon material-icons">help_outline</i>
+        </button>`;
+  html += search_bar;
+  
   $("#nav").html(html);
   mdui.mutation();
   mdui.updateTextFields();
@@ -5735,45 +5748,31 @@ function requestSearch(params, resultCallback) {
 }
 function list(path) {
   var content = `
-<div class="container-fluid">
-    <div class="card">
-        <div class="row justify-content-start p-3">
-            <div class="col-5">
-                Description File
-            </div>
-            <div class="col-3 text-center">
-                Date Modified
-            </div>
-            <div class="col-2 text-center">
-                 Size
-            </div>
-            <div class="col-2 text-center">
-                Actions
-            </div>
-        </div>
-    </div>
-</div>
 	 <div class="mdui-row"> 
 	  <ul class="mdui-list"> 
 	   <li class="mdui-list-item th"> 
-		    <div class="mdui-col-xs-12 mdui-col-sm-7">
-		     Description File
-		    </div> 
-		    <div class="mdui-col-sm-3 mdui-text-right">
-			Date Modified
-		    </div> 
-		    <div class="mdui-col-sm-2 mdui-text-right">
-		     Size
-		    </div>
-	      <div class="mdui-col-sm-2 mdui-text-right dummyclass">
-	    	Actions
-	    </div>  
+	    <div class="mdui-col-xs-12 mdui-col-sm-7">
+	     File
+	<i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="more">expand_more</i>
+	    </div> 
+	    <div class="mdui-col-sm-3 mdui-text-right">
+		Date Modified
+	<i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">expand_more</i>
+	    </div> 
+	    <div class="mdui-col-sm-2 mdui-text-right">
+	     Size
+	<i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i>
+	    </div>
+      <div class="mdui-col-sm-2 mdui-text-right dummyclass">
+    Actions
+  <i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i>
+    </div>  
 	    </li> 
 	  </ul> 
 	 </div> 
-	 <div id="list" class="row mdui-list"> 
-	  <!-- <ul class="mdui-list">
-</ul> -->
+	 <div class="mdui-row"> 
+	  <ul id="list" class="mdui-list"> 
+	  </ul> 
 	  <div id="count" class="mdui-hidden mdui-center mdui-text-center mdui-m-b-3 mdui-typo-subheading mdui-text-color-blue-grey-500">Total <span class="number"></span> item(s)</div>
 	 </div>
 	`;
@@ -5864,39 +5863,23 @@ function append_files_to_list(path, files) {
     item.modifiedTime = utc2local(item.modifiedTime);
     item.size = formatFileSize(item.size);
     if (item.mimeType == "application/vnd.google-apps.folder") {
-      html += `
-      <div class="card">
-        <div class="row justify-content-start p-3">
-            <div class="col-5" title="${item.name}">
-                <i class="mdui-icon material-icons">folder_open</i>
+      html += `<li class="mdui-list-item mdui-ripple"><a href="${p}" class="folder">
+	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
+	            <i class="mdui-icon material-icons">folder_open</i>
 	              ${item.name}
- 	            </div>
-            </div>
-            <div class="col-3 text-center">
-                One of two columns
-            </div>
-            <div class="col-2 text-center">
-                ${item["modifiedTime"]}
-            </div>
-            <div class="col-2 text-center">
-                ${item["size"]}
-            </div>
-        </div>
-    </div>
-      
-//       <li class="mdui-list-item mdui-ripple">
-//       <a href="${p}" class="folder">
-// 	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
-// 	            <i class="mdui-icon material-icons">folder_open</i>
-// 	              ${item.name}
-// 	            </div>
-// 	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-// 	            <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
-// 	            </a>
-//               <div class="mdui-col-sm-2 mdui-text-right dummyclass">
-//               </div>
-// 	        </li>
-		`;
+	            </div>
+	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
+	            <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
+	            </a>
+              <div class="mdui-col-sm-2 mdui-text-right dummyclass">
+	              <button onclick="window.open('${p}','_blank')" class="mdui-textfield-icon mdui-btn mdui-btn-icon dummyclass" style="float: right;">
+                  <i class="mdui-icon material-icons dummyclass">launch</i>
+                </button>
+                <button onclick="(function setClipboard(value) {var tempInput = document.createElement('input');tempInput.style = 'position: absolute; left: -1000px; top: -1000px';tempInput.value = value;document.body.appendChild(tempInput);tempInput.select();document.execCommand('copy');document.body.removeChild(tempInput);})(window.location.protocol + '//' + window.location.hostname + '${p}')" class="mdui-textfield-icon mdui-btn mdui-btn-icon dummyclass" style="float: right;">
+                  <i class="mdui-icon material-icons dummyclass">content_copy</i>
+                </button>
+              </div>
+	        </li>`;
     } else {
       var p = path + encodeURIComponent(item.name).replaceAll("%5C", "%5C%5C").replace(/[!'()*]/g, escape);	// Adding file name to url
       var ddl_link = p;
@@ -5925,26 +5908,7 @@ function append_files_to_list(path, files) {
       if (item["size"] === ""){
         item["size"] = "— — —";
       }
-      html += `
-      
-      <div class="card">
-        <div class="row justify-content-start p-3">
-            <div class="col-5">
-                One of two columns
-            </div>
-            <div class="col-3 text-center">
-                One of two columns
-            </div>
-            <div class="col-2 text-center">
-                One of two columns
-            </div>
-            <div class="col-2 text-center">
-                One of two columns
-            </div>
-        </div>
-    </div>
-      
-      <li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
+      html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
 	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
@@ -5955,6 +5919,12 @@ function append_files_to_list(path, files) {
             <div class="mdui-col-sm-2 mdui-text-right dummyclass">
 	            <button onclick="window.open('${ddl_link}','_self')" class="mdui-textfield-icon mdui-btn mdui-btn-icon dummyclass" style="float: right;">
                 <i class="mdui-icon material-icons dummyclass">file_download</i>
+              </button>
+              <button onclick="window.open('${p}','_blank')" class="mdui-textfield-icon mdui-btn mdui-btn-icon dummyclass" style="float: right;">
+                <i class="mdui-icon material-icons dummyclass">launch</i>
+              </button>
+              <button onclick="(function setClipboard(value) {var tempInput = document.createElement('input');tempInput.style = 'position: absolute; left: -1000px; top: -1000px';tempInput.value = value;document.body.appendChild(tempInput);tempInput.select();document.execCommand('copy');document.body.removeChild(tempInput);})(window.location.protocol + '//' + window.location.hostname + '${ddl_link}')" class="mdui-textfield-icon mdui-btn mdui-btn-icon dummyclass" style="float: right;">
+                <i class="mdui-icon material-icons dummyclass">content_copy</i>
               </button>
             </div>
 	      </li>`;
@@ -5994,20 +5964,22 @@ function render_search_result_list() {
 	   <li class="mdui-list-item th"> 
 	    <div class="mdui-col-xs-12 mdui-col-sm-7">
 	     File
+	<i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="more">expand_more</i>
 	    </div> 
 	    <div class="mdui-col-sm-3 mdui-text-right">
 	     Date Modified
+	<i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">expand_more</i>
 	    </div> 
 	    <div class="mdui-col-sm-2 mdui-text-right">
 	     Size
+	<i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i>
 	    </div> 
 	    </li> 
 	  </ul> 
 	 </div> 
-	 <div class=row"> 
-	 <div id="list" class="card mdui-list">
-	 </div>
-
+	 <div class="mdui-row"> 
+	  <ul id="list" class="mdui-list"> 
+	  </ul> 
 	  <div id="count" class="mdui-hidden mdui-center mdui-text-center mdui-m-b-3 mdui-typo-subheading mdui-text-color-blue-grey-500">Total <span class="number"></span> item(s)</div>
 	 </div>
 	 <div id="readme_md" class="mdui-typo" style="display:none; padding: 20px 0;"></div>
