@@ -5741,13 +5741,13 @@ function list(path) {
             <div class="col-5">
                 Description File
             </div>
-            <div class="col-3">
+            <div class="col-3 text-center">
                 Date Modified
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
                  Size
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
                 Actions
             </div>
         </div>
