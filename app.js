@@ -5868,13 +5868,15 @@ function append_files_to_list(path, files) {
       <div class="card">
         <div class="row justify-content-start p-3">
             <div class="col-5" title="${item.name}">
-                One of two columns
+                <i class="mdui-icon material-icons">folder_open</i>
+	              ${item.name}
+ 	            </div>
             </div>
             <div class="col-3 text-center">
                 One of two columns
             </div>
             <div class="col-2 text-center">
-                One of two columns
+                ${item["modifiedTime"]}
             </div>
             <div class="col-2 text-center">
                 ${item["size"]}
