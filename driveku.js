@@ -4,7 +4,8 @@
 // Initialize the page
 function init() {
     document.siteName = $('title').html();
-    var html = `<header>
+    var html = `
+    <header>
    <div id="nav">
    </div>
 </header>
@@ -1562,7 +1563,4 @@ function copyFunction() {
 function outFunc() {
     var tooltip = document.getElementById("myTooltip");
     tooltip.innerHTML = "Copy";
-}Il tooltip.innerHTML = "Copy";
-}Il tooltip.innerHTML = "Copy";
-}Il}Iloltip.innerHTML = "Copy";
-}Il
+}
