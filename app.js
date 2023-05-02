@@ -5718,16 +5718,16 @@ function list(path) {
 	 <div class="mdui-row"> 
 	  <ul class="mdui-list"> 
 	   <li class="mdui-list-item th"> 
-	    <div class="mdui-col-xs-12 mdui-col-sm-7">
+	    <div class="col-6">
 	     Description File
 	    </div> 
-	    <div class="mdui-col-sm-3 mdui-text-right">
+	    <div class="col-2">
 		Date Modified
 	    </div> 
-	    <div class="mdui-col-sm-2 text-center">
+	    <div class="col-2 text-center">
 	     Size
 	    </div>
-      <div class="mdui-col-sm-2 text-center">
+      <div class="col-2 text-center">
     Actions
     </div>  
 	    </li> 
@@ -5827,14 +5827,14 @@ function append_files_to_list(path, files) {
         item.size = formatFileSize(item.size);
         if (item.mimeType == "application/vnd.google-apps.folder") {
             html += `<li class="mdui-list-item mdui-ripple"><a href="${p}" class="folder">
-	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
+	            <div class="col-6 mdui-text-truncate" title="${item.name}">
 	            <i class="mdui-icon material-icons">folder_open</i>
 	              ${item.name}
 	            </div>
-	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	            <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
+	            <div class="col-2">${item["modifiedTime"]}</div>
+	            <div class="col-2 text-center">${item["size"]}</div>
 	            </a>
-              <div class="mdui-col-sm-2 text-center">
+              <div class="col-2 text-center">
               </div>
 	        </li>`;
         } else {
@@ -5867,15 +5867,15 @@ function append_files_to_list(path, files) {
             }
             html += `<li class="mdui-list-item file mdui-ripple" target="_blank">
             <a gd-type="${item.mimeType}" href="${p}" class="${c}">
-	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
+	          <div class="col-6 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
 	          </div>
               </a>
-	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	          <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
+	          <div class="col-2">${item["modifiedTime"]}</div>
+	          <div class="col-2 text-center">${item["size"]}</div>
 	          
-            <div class="mdui-col-sm-2 text-center">
+            <div class="col-2 text-center">
 	            <button onclick="window.open('${ddl_link}','_self')" class="btn btn-secondary">
                 <i class="icon-dl bi bi-download"></i>
                 <span class="text-dl">
@@ -5918,13 +5918,13 @@ function render_search_result_list() {
 	 <div class="mdui-row"> 
 	  <ul class="mdui-list"> 
 	   <li class="mdui-list-item th"> 
-	    <div class="mdui-col-xs-12 mdui-col-sm-7">
+	    <div class="col-6">
 	     Description File
 	    </div> 
-	    <div class="mdui-col-sm-3 mdui-text-right">
+	    <div class="mcol-2 mdui-text-right">
 	     Date Modified
 	    </div> 
-	    <div class="mdui-col-sm-2 text-center">
+	    <div class="col-2 text-center">
 	     Size
 	    </div> 
 	    </li> 
@@ -6007,12 +6007,13 @@ function append_search_result_to_list(files) {
         item.size = formatFileSize(item.size);
         if (item.mimeType == "application/vnd.google-apps.folder") {
             html += `<li class="mdui-list-item mdui-ripple"><a id="${item["id"]}" onclick="onSearchResultItemClick(this)" class="folder">
-	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
+	            <div class="col-6 mdui-text-truncate" title="${item.name}">
 	            <i class="mdui-icon material-icons">folder_open</i>
 	              ${item.name}
 	            </div>
-	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	            <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
+	            <div class="col-2 mdui-text-right">${item["modifiedTime"]}</div>
+	            <div class="col-2 mdui-text-right">${item["size"]}</div>
+	            <div class="col-2 mdui-text-right"></div>
 	            </a>
 	        </li>`;
         } else {
@@ -6031,13 +6032,14 @@ function append_search_result_to_list(files) {
             html += `
             <li class="mdui-list-item file mdui-ripple" target="_blank">
             <a id="${item["id"]}" gd-type="${item.mimeType}" onclick="onSearchResultItemClick(this)" class="${c}">
-	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
+	          <div class="col-6 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
 	          </div>
               </a>
-	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	          <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
+	          <div class="col-2 mdui-text-right">${item["modifiedTime"]}</div>
+	          <div class="col-2 text-center">${item["size"]}</div>
+	          <div class="col-2 text-center"></div>
 	          
 	      </li>`;
         }
