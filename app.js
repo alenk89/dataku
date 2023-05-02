@@ -5864,7 +5864,26 @@ function append_files_to_list(path, files) {
     item.modifiedTime = utc2local(item.modifiedTime);
     item.size = formatFileSize(item.size);
     if (item.mimeType == "application/vnd.google-apps.folder") {
-      html += `<li class="mdui-list-item mdui-ripple"><a href="${p}" class="folder">
+      html += `
+      <div class="card">
+        <div class="row justify-content-start">
+            <div class="col-5">
+                One of two columns
+            </div>
+            <div class="col-3">
+                One of two columns
+            </div>
+            <div class="col-2">
+                One of two columns
+            </div>
+            <div class="col-2">
+                One of two columns
+            </div>
+        </div>
+    </div>
+      
+      <li class="mdui-list-item mdui-ripple">
+      <a href="${p}" class="folder">
 	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	            <i class="mdui-icon material-icons">folder_open</i>
 	              ${item.name}
@@ -5874,7 +5893,8 @@ function append_files_to_list(path, files) {
 	            </a>
               <div class="mdui-col-sm-2 mdui-text-right dummyclass">
               </div>
-	        </li>`;
+	        </li>
+		`;
     } else {
       var p = path + encodeURIComponent(item.name).replaceAll("%5C", "%5C%5C").replace(/[!'()*]/g, escape);	// Adding file name to url
       var ddl_link = p;
