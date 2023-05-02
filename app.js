@@ -5771,9 +5771,9 @@ function list(path) {
 	    </li> 
 	  </ul> 
 	 </div> 
-	 <div class="mdui-row"> 
-	  <ul id="list" class="mdui-list"> 
-	  </ul> 
+	 <div id="list" class="row mdui-list"> 
+	  <!-- <ul class="mdui-list">
+</ul> -->
 	  <div id="count" class="mdui-hidden mdui-center mdui-text-center mdui-m-b-3 mdui-typo-subheading mdui-text-color-blue-grey-500">Total <span class="number"></span> item(s)</div>
 	 </div>
 	`;
