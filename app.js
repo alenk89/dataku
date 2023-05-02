@@ -5724,10 +5724,10 @@ function list(path) {
 	    <div class="mdui-col-sm-3 mdui-text-right">
 		Date Modified
 	    </div> 
-	    <div class="mdui-col-sm-2 mdui-text-right">
+	    <div class="mdui-col-sm-1 text-center">
 	     Size
 	    </div>
-      <div class="mdui-col-sm-2 mdui-text-right dummyclass">
+      <div class="mdui-col-sm-2 text-center">
     Actions
     </div>  
 	    </li> 
@@ -5832,9 +5832,9 @@ function append_files_to_list(path, files) {
 	              ${item.name}
 	            </div>
 	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	            <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
+	            <div class="mdui-col-sm-1 text-center">${item["size"]}</div>
 	            </a>
-              <div class="mdui-col-sm-2 text-center dummyclass">
+              <div class="mdui-col-sm-2 text-center">
               </div>
 	        </li>`;
         } else {
@@ -5873,7 +5873,7 @@ function append_files_to_list(path, files) {
 	          </div>
               </a>
 	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	          <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
+	          <div class="mdui-col-sm-1 text-center">${item["size"]}</div>
 	          
             <div class="mdui-col-sm-2 text-center">
 	            <button onclick="window.open('${ddl_link}','_self')" class="btn btn-secondary">
@@ -5924,7 +5924,7 @@ function render_search_result_list() {
 	    <div class="mdui-col-sm-3 mdui-text-right">
 	     Date Modified
 	    </div> 
-	    <div class="mdui-col-sm-2 mdui-text-right">
+	    <div class="mdui-col-sm-1 text-center">
 	     Size
 	    </div> 
 	    </li> 
@@ -5939,7 +5939,9 @@ function render_search_result_list() {
 	`;
     $("#content").html(content);
     $("#list").html(
-        `<div class="mdui-progress"><div class="mdui-progress-indeterminate"></div></div>`
+        `<div class="mdui-progress">
+        <div class="mdui-progress-indeterminate">
+        </div></div>`
     );
     $("#readme_md").hide().html("");
     $("#head_md").hide().html("");
