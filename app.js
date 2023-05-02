@@ -5570,10 +5570,10 @@ function init() {
     );
     var html = `
 <div class="mdui-container-fluid">
-	<div class="mdui-container-fluid-fluid">
+	<div class="mdui-container-fluid">
 		<div id="nav" class="mdui-toolbar nexmoe-item nav-style"> </div>
     </div>
-	<div class="mdui-container-fluid-fluid">
+	<div class="mdui-container-fluid">
 		<div id="head_md" class="mdui-typo nexmoe-item" style="display:none;padding: 20px 0;"></div>
 		<div id="content" class="nexmoe-item"></div>
   </div>
@@ -6218,7 +6218,7 @@ function file_video(path) {
       </button>
       <ul class="mdui-menu" id="player-items">${player_items}</ul>`;
     const content = `
-<div class="mdui-container-fluid-fluid">
+<div class="mdui-container-fluid">
 	<br>
 	<div class="mdui-video-fluid mdui-center" id="dplayer"></div>
 	<br>${playBtn}
@@ -6255,7 +6255,7 @@ function file_audio(path) {
     var url = window.location.origin + path;
     var file_name = decodeURIComponent(path.trim("/").split("/").slice(-1)[0].replaceAll("%5C%5C", "%5C"));
     var content = `
-<div class="mdui-container-fluid-fluid">
+<div class="mdui-container-fluid">
 	<br>
 	<audio class="mdui-center" preload controls>
 	  <source src="${url}"">
@@ -6298,7 +6298,7 @@ function file_pdf(path) {
 	`;
     $("#content")
         .removeClass("mdui-container-fluid")
-        .addClass("mdui-container-fluid-fluid")
+        .addClass("mdui-container-fluid")
         .css({ padding: 0 })
         .html(content);
 }
@@ -6346,7 +6346,7 @@ function file_image(path) {
         }
     }
     var content = `
-<div class="mdui-container-fluid-fluid">
+<div class="mdui-container-fluid">
     <br>
     <div id="imgWrap">
         ${targetText}
