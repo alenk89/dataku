@@ -5832,9 +5832,9 @@ function append_files_to_list(path, files) {
 	              ${item.name}
 	            </div>
 	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	            <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
+	            <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
 	            </a>
-              <div class="mdui-col-sm-2 mdui-text-right dummyclass">
+              <div class="mdui-col-sm-2 text-center dummyclass">
               </div>
 	        </li>`;
         } else {
@@ -5871,10 +5871,10 @@ function append_files_to_list(path, files) {
 	            ${item.name}
 	          </div>
 	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	          <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
+	          <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
 	          </a>
-            <div class="mdui-col-sm-2">
-	            <button onclick="window.open('${ddl_link}','_self')" class="btn-dl">
+            <div class="mdui-col-sm-2 text-center">
+	            <button onclick="window.open('${ddl_link}','_self')" class="btn btn-secondary">
                 <i class="icon-dl bi bi-download"></i>
                 <span class="text-dl">
                 Download
