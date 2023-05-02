@@ -5873,9 +5873,9 @@ function append_files_to_list(path, files) {
 	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
 	          <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
 	          </a>
-            <div class="mdui-col-sm-2 mdui-text-center dummyclass">
-	            <button onclick="window.open('${ddl_link}','_self')" class="mdui-textfield-icon mdui-btn mdui-btn-icon dummyclass" style="float: right;">
-                <i class="mdui-icon bi bi-download"></i>
+            <div class="mdui-col-sm-2">
+	            <button onclick="window.open('${ddl_link}','_self')" class="btn-dl">
+                <i class="icon-dl bi bi-download"></i>
                 <span class="text-dl">
                 Download
                 </span>
