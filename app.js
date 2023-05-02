@@ -5694,7 +5694,7 @@ function nav(path) {
       }
     }
   }
-  
+  html += `</div>`;
   $("#nav").html(html);
   mdui.mutation();
   mdui.updateTextFields();
