@@ -5923,7 +5923,26 @@ function append_files_to_list(path, files) {
       if (item["size"] === ""){
         item["size"] = "— — —";
       }
-      html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
+      html += `
+      
+      <div class="card">
+        <div class="row justify-content-start">
+            <div class="col-5">
+                One of two columns
+            </div>
+            <div class="col-3">
+                One of two columns
+            </div>
+            <div class="col-2">
+                One of two columns
+            </div>
+            <div class="col-2">
+                One of two columns
+            </div>
+        </div>
+    </div>
+      
+      <li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
 	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
