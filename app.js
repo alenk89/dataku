@@ -5735,21 +5735,37 @@ function requestSearch(params, resultCallback) {
 }
 function list(path) {
   var content = `
+  <div class="container">
+    <div class="row justify-content-start">
+        <div class="col-3">
+            One of two columns
+        </div>
+        <div class="col-3">
+            One of two columns
+        </div>
+        <div class="col-3">
+            One of two columns
+        </div>
+        <div class="col-3">
+            One of two columns
+        </div>
+    </div>
+</div>
 	 <div class="mdui-row"> 
 	  <ul class="mdui-list"> 
 	   <li class="mdui-list-item th"> 
-	    <div class="mdui-col-xs-12 mdui-col-sm-7">
-	     Description File
-	    </div> 
-	    <div class="mdui-col-sm-3 mdui-text-right">
-		Date Modified
-	    </div> 
-	    <div class="mdui-col-sm-2 mdui-text-right">
-	     Size
-	    </div>
-      <div class="mdui-col-sm-2 mdui-text-right dummyclass">
-    Actions
-    </div>  
+		    <div class="mdui-col-xs-12 mdui-col-sm-7">
+		     Description File
+		    </div> 
+		    <div class="mdui-col-sm-3 mdui-text-right">
+			Date Modified
+		    </div> 
+		    <div class="mdui-col-sm-2 mdui-text-right">
+		     Size
+		    </div>
+	      <div class="mdui-col-sm-2 mdui-text-right dummyclass">
+	    	Actions
+	    </div>  
 	    </li> 
 	  </ul> 
 	 </div> 
