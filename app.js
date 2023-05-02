@@ -5735,19 +5735,21 @@ function requestSearch(params, resultCallback) {
 }
 function list(path) {
   var content = `
-  <div class="container">
-    <div class="row justify-content-start">
-        <div class="col-3">
-            One of two columns
-        </div>
-        <div class="col-3">
-            One of two columns
-        </div>
-        <div class="col-3">
-            One of two columns
-        </div>
-        <div class="col-3">
-            One of two columns
+<div class="container">
+    <div class="card">
+        <div class="row justify-content-start">
+            <div class="col-5">
+                One of two columns
+            </div>
+            <div class="col-3">
+                One of two columns
+            </div>
+            <div class="col-2">
+                One of two columns
+            </div>
+            <div class="col-2">
+                One of two columns
+            </div>
         </div>
     </div>
 </div>
