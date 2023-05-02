@@ -5670,12 +5670,6 @@ function nav(path) {
   var html = "";
   var cur = window.current_drive_order || 0;
   var names = window.drive_names;
-  html += `<select class="mdui-select" onchange="window.location.href=this.value" mdui-select style="overflow:visible;">`;
-  names.forEach((name, idx) => {
-    html += `<option value="/${idx}:/"  ${
-      idx === cur ? 'selected="selected"' : ""
-    } >${name}</option>`;
-  });
   html += `</select><div class="mdui-toolbar nav-style dummyclass3" style="margin-top:0px!important">`;
   html += `<a href="/${cur}:/" class="mdui-typo-headline folder" style="background-color:transparent">${document.siteName}</a>`;
   if (!model.is_search_page) {
