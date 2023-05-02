@@ -5882,18 +5882,18 @@ function append_files_to_list(path, files) {
         </div>
     </div>
       
-      <li class="mdui-list-item mdui-ripple">
-      <a href="${p}" class="folder">
-	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
-	            <i class="mdui-icon material-icons">folder_open</i>
-	              ${item.name}
-	            </div>
-	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	            <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
-	            </a>
-              <div class="mdui-col-sm-2 mdui-text-right dummyclass">
-              </div>
-	        </li>
+//       <li class="mdui-list-item mdui-ripple">
+//       <a href="${p}" class="folder">
+// 	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
+// 	            <i class="mdui-icon material-icons">folder_open</i>
+// 	              ${item.name}
+// 	            </div>
+// 	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
+// 	            <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
+// 	            </a>
+//               <div class="mdui-col-sm-2 mdui-text-right dummyclass">
+//               </div>
+// 	        </li>
 		`;
     } else {
       var p = path + encodeURIComponent(item.name).replaceAll("%5C", "%5C%5C").replace(/[!'()*]/g, escape);	// Adding file name to url
