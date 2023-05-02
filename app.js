@@ -5516,7 +5516,7 @@ document.write(
     '<script src="//cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>'
 );
 document.write(
-    "<style>.mdui-appbar .mdui-toolbar{height:56px;font-size:1pc}.mdui-toolbar>i{opacity:.5}.mdui-toolbar>i{padding:0}.mdui-toolbar>a:hover,a.active,a.mdui-typo-headline{opacity:1}.mdui-container{max-width:980px}.mdui-list-item{transition:none}.mdui-list>.th{background-color:initial}.mdui-list-item>a{width:100%;line-height:3pc}.mdui-list-item{margin:2px 0;padding:0}.mdui-toolbar>a:last-child{opacity:1; color: #000}@media screen and (max-width:980px){.mdui-list-item .mdui-text-right{display:none}.mdui-container{width:100%!important;margin:0}}</style>"
+    "<style>.mdui-appbar .mdui-toolbar{height:56px;font-size:1pc}.mdui-toolbar>i{opacity:.5}.mdui-toolbar>i{padding:0}.mdui-toolbar>a:hover,a.active,a.mdui-typo-headline{opacity:1}.mdui-container-fluid{max-width:980px}.mdui-list-item{transition:none}.mdui-list>.th{background-color:initial}.mdui-list-item>a{width:100%;line-height:3pc}.mdui-list-item{margin:2px 0;padding:0}.mdui-toolbar>a:last-child{opacity:1; color: #000}@media screen and (max-width:980px){.mdui-list-item .mdui-text-right{display:none}.mdui-container-fluid{width:100%!important;margin:0}}</style>"
 );
 if (UI.dark_mode) {
     document.write(
@@ -5569,11 +5569,11 @@ function init() {
         `mdui-theme-primary-${UI.main_color} mdui-theme-accent-${UI.accent_color}`
     );
     var html = `
-<div class="mdui-container">
-	<div class="mdui-container-fluid">
+<div class="mdui-container-fluid">
+	<div class="mdui-container-fluid-fluid">
 		<div id="nav" class="mdui-toolbar nexmoe-item nav-style"> </div>
     </div>
-	<div class="mdui-container-fluid">
+	<div class="mdui-container-fluid-fluid">
 		<div id="head_md" class="mdui-typo nexmoe-item" style="display:none;padding: 20px 0;"></div>
 		<div id="content" class="nexmoe-item"></div>
   </div>
@@ -6147,7 +6147,7 @@ function file_code(path) {
     var ext = name.split(".").pop().toLowerCase();
     var href = window.location.origin + path;
     var content = `
-<div class="mdui-container">
+<div class="mdui-container-fluid">
 <pre id="editor" ></pre>
 </div>
 <div class="mdui-textfield">
@@ -6218,7 +6218,7 @@ function file_video(path) {
       </button>
       <ul class="mdui-menu" id="player-items">${player_items}</ul>`;
     const content = `
-<div class="mdui-container-fluid">
+<div class="mdui-container-fluid-fluid">
 	<br>
 	<div class="mdui-video-fluid mdui-center" id="dplayer"></div>
 	<br>${playBtn}
@@ -6255,7 +6255,7 @@ function file_audio(path) {
     var url = window.location.origin + path;
     var file_name = decodeURIComponent(path.trim("/").split("/").slice(-1)[0].replaceAll("%5C%5C", "%5C"));
     var content = `
-<div class="mdui-container-fluid">
+<div class="mdui-container-fluid-fluid">
 	<br>
 	<audio class="mdui-center" preload controls>
 	  <source src="${url}"">
@@ -6297,8 +6297,8 @@ function file_pdf(path) {
   <a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
 	`;
     $("#content")
-        .removeClass("mdui-container")
-        .addClass("mdui-container-fluid")
+        .removeClass("mdui-container-fluid")
+        .addClass("mdui-container-fluid-fluid")
         .css({ padding: 0 })
         .html(content);
 }
@@ -6326,7 +6326,7 @@ function file_image(path) {
             let prev_child = cur - 1 > -1 ? target_children[cur - 1] : null;
             let next_child = cur + 1 < len ? target_children[cur + 1] : null;
             targetText = `
-            <div class="mdui-container">
+            <div class="mdui-container-fluid">
                 <div class="mdui-row-xs-2 mdui-m-b-1">
                     <div class="mdui-col">
                         ${prev_child
@@ -6346,7 +6346,7 @@ function file_image(path) {
         }
     }
     var content = `
-<div class="mdui-container-fluid">
+<div class="mdui-container-fluid-fluid">
     <br>
     <div id="imgWrap">
         ${targetText}
