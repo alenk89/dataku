@@ -5678,7 +5678,7 @@ function nav(path) {
                 }
                 html += `
                 <i class="mdui-icon material-icons mdui-icon-dark folder" style="margin:0;">chevron_right</i>
-                <a class="folder" style="background-color:transparent;max-width:230px" title="${n}" href="/${cur}:${p}">${n}</a>
+                <a class="folder" style="background-color:transparent;max-width:230px" title="${n}" href="javascript:void(0);" onclick="this.href = '/${cur}:${p}'">${n}</a>
                 `;
             }
         }
