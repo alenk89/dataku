@@ -5833,10 +5833,9 @@ function append_files_to_list(path, files) {
             <li class="mdui-list-item mdui-ripple">
             <a href="javascript:void(0);" onclick="this.href = '${p}'" class="folder">
 	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
-                <span class="material-icons-two-tone">
-                    folder_open
-                </span>
-                ${item.name}
+	            <i class="bi bi-folder2-open"></i>
+                    ${item.name}
+                </div>
                 </a>
 	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
 	            <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
