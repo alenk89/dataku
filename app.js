@@ -5833,7 +5833,7 @@ function append_files_to_list(path, files) {
             <li class="mdui-list-item mdui-ripple">
             <a href="javascript:void(0);" onclick="this.href = '${p}'" class="folder">
 	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
-	            <i class="mdui-icon bi bi-folder2-open"></i>
+	            <i class="mdui-icon material-icons-two-tone">folder_open</i>
                     ${item.name}
                 </div>
                 </a>
