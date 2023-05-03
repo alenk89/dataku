@@ -5677,6 +5677,14 @@ function nav(path) {
                     break;
                 }
                 html += `
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/${cur}:${p}">${n}</a>
+                            </li>
+                        <li class="breadcrumb-item active" aria-current="page">${n}</li>
+                    </ol>
+                </nav>
                 <i class="mdui-icon material-icons mdui-icon-dark folder" style="margin:0;">chevron_right</i>
                 <a class="folder" style="background-color:transparent;max-width:230px" title="${n}" href="javascript:void(0);" onclick="this.href = '/${cur}:${p}'">${n}</a>
                 `;
