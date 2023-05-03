@@ -5829,7 +5829,9 @@ function append_files_to_list(path, files) {
         item.modifiedTime = utc2local(item.modifiedTime);
         item.size = formatFileSize(item.size);
         if (item.mimeType == "application/vnd.google-apps.folder") {
-            html += `<li class="mdui-list-item mdui-ripple"><a href="${p}" class="folder">
+            html += `
+            <li class="mdui-list-item mdui-ripple">
+            <a href="javascript:void(0);" onclick="this.href = '${p}'" class="folder">
 	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	            <i class="mdui-icon material-icons">folder_open</i>
 	              ${item.name}
@@ -5869,7 +5871,7 @@ function append_files_to_list(path, files) {
                 item["size"] = "— — —";
             }
             html += `<li class="mdui-list-item file mdui-ripple" target="_blank">
-            <a gd-type="${item.mimeType}" href="${p}" class="${c}">
+            <a gd-type="${item.mimeType}" href="javascript:void(0);" onclick="this.href = '${p}'" class="${c}">
 	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
