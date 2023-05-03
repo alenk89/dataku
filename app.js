@@ -5834,7 +5834,9 @@ function append_files_to_list(path, files) {
             <a href="javascript:void(0);" onclick="this.href = '${p}'" class="folder">
 	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	            <i class="mdui-icon bi bi-folder2-open"></i>
-	              ${item.name}
+                <span class="nama-data">
+                    ${item.name}
+                </span>
 	            </div>
                 </a>
 	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
@@ -6011,7 +6013,9 @@ function append_search_result_to_list(files) {
             html += `<li class="mdui-list-item mdui-ripple"><a id="${item["id"]}" onclick="onSearchResultItemClick(this)" class="folder">
 	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	            <i class="mdui-icon bi bi-folder2-open"></i>
-	              ${item.name}
+	              <span class="nama-data">
+                    ${item.name}
+                </span>
 	            </div>
                 </a>
 	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
