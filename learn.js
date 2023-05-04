@@ -884,7 +884,7 @@ function file_others(path) {
 <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
     <a href="${p}">
-        <button type="button" class="btn btn-secondary">Back</button>
+        <button class="btn btn-secondary">Back</button>
     </a>
   ${obj.name}</div>
 </div>
@@ -999,7 +999,7 @@ function file_video(path) {
   <div class="text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
   <a href="${p}">
-<button type="button" class="btn btn-secondary">Back</button>
+<button class="btn btn-secondary">Back</button>
 </a>
   ${obj.name}
   </div>
@@ -1065,7 +1065,7 @@ function file_audio(path) {
   <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
   <a href="${p}">
-<button type="button" class="btn btn-secondary">Back</button>
+<button class="btn btn-secondary">Back</button>
 </a>
   ${obj.name}
   </div>
@@ -1176,7 +1176,7 @@ function file_pdf(path) {
   <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
   <a href="${p}">
-<button type="button" class="btn btn-secondary">Back</button>
+<button class="btn btn-secondary">Back</button>
 </a>
   ${obj.name}
   </div>
@@ -1269,7 +1269,7 @@ function file_image(path) {
   <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
   <a href="${p}">
-<button type="button" class="btn btn-secondary">Back</button>
+<button class="btn btn-secondary">Back</button>
 </a>
   ${obj.name}</div>
   <div>${targetText}</div><br>
