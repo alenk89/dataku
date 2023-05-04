@@ -994,7 +994,7 @@ function file_video(path) {
   <div class="card text-center">
   <div class="text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
-  <button type="button" class="btn btn-secondary">Back tes3</button>
+  <a href="${p}" class="btn btn-secondary">Back</a>
   ${obj.name}
   </div>
   <video id="vplayer" width="100%" height="100%" playsinline controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen']; data-plyr-config="{ "title": "${decodename}"}" data-poster="${poster}" style="--plyr-captions-text-color: #ffffff;--plyr-captions-background: #000000;">
