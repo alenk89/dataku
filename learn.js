@@ -347,6 +347,9 @@ function list(path) {
   <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
     <ol class="breadcrumb" id="folderne">
     `;
+    var navlink = '';
+    var navfulllink = window.location.pathname;
+    var breadbar = '';
 
     // <li class="breadcrumb-item"><a href="${item}">${navnamecr}</a></li>
     var navarray = navfulllink.trim('/').split('/');
