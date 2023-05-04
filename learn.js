@@ -881,7 +881,7 @@ function file_others(path) {
                     var content = `
 <div class="container"><br>
 <div class="card text-center">
-<div class="card-body text-center">
+<div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><button type="button" class="btn btn-secondary">Secondary</button>${obj.name}</div>
 </div>
 `;
@@ -992,7 +992,7 @@ function file_video(path) {
                 var content = `
   <div class="container text-center"><br>
   <div class="card text-center">
-  <div class="text-center">
+  <div class="text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
   <button type="button" class="btn btn-secondary">Secondary</button>
   ${obj.name}
@@ -1056,7 +1056,7 @@ function file_audio(path) {
                 var content = `
   <div class="container"><br>
   <div class="card" style="background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);">
-  <div class="card-body text-center">
+  <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
   <button type="button" class="btn btn-secondary">Secondary</button>
   ${obj.name}
@@ -1165,7 +1165,7 @@ function file_pdf(path) {
   </script>
   <div class="container"><br>
   <div class="card">
-  <div class="card-body text-center">
+  <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
   <button type="button" class="btn btn-secondary">Secondary</button>${obj.name}</div>
   <div>
@@ -1254,7 +1254,7 @@ function file_image(path) {
                 var content = `
   <div class="container"><br>
   <div class="card">
-  <div class="card-body text-center">
+  <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><button type="button" class="btn btn-secondary">Secondary</button>
   ${obj.name}</div>
   <div>${targetText}</div><br>
