@@ -3,10 +3,7 @@
 // Initialize the page
 function init() {
     document.siteName = $('title').html();
-    var html = `<header>
-   <div id="nav">
-   </div>
-</header>
+    var html = `
 <div>
 <div id="content" style="padding-top: ${UI.header_padding}px;${UI.fixed_footer ? ' padding-bottom: clamp(170px, 100%, 300px);' : ''}">
 </div>
