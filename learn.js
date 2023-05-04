@@ -377,7 +377,11 @@ function list(path) {
   </div>
     <div id="list" class="list-group text-break">
     </div>
-    <div class="${UI.file_count_alert_class} text-center d-none" role="alert" id="count">Total <span class="number text-center"></span> items</div>
+        <div class="${UI.file_count_alert_class} text-center d-none" role="alert" id="count">
+        Total 
+        <span class="number text-center"></span> 
+        items
+        </div>
     <div id="readme_md" style="display:none; padding: 20px 20px;"></div>
     </div>
     `;
@@ -930,7 +934,7 @@ function file_code(path) {
 <div class="container"><br>
 <div class="card text-center">
 <div class="card-body text-center">
-  <div class="${UI.file_view_alert_class}" id="file_details" role="alert">${obj.name}<br>${size}</div>
+  <div class="${UI.file_view_alert_class}" id="file_details" role="alert">${obj.name}</div>
 <div>
 <pre ${UI.second_domain_for_dl ? 'style="display:none;"' : 'style="display:block;"'} class="line-numbers language-markup" data-src="plugins/line-numbers/index.html" data-start="-5" style="white-space: pre-wrap; counter-reset: linenumber -6;" data-src-status="loaded" tabindex="0"><code id="editor"></code></pre>
 </div>
@@ -989,7 +993,7 @@ function file_video(path) {
   <div class="container text-center"><br>
   <div class="card text-center">
   <div class="text-center">
-  <div class="${UI.file_view_alert_class}" id="file_details" role="alert">${obj.name}<br>${size}</div>
+  <div class="${UI.file_view_alert_class}" id="file_details" role="alert">${obj.name}</div>
   <video id="vplayer" width="100%" height="100%" playsinline controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen']; data-plyr-config="{ "title": "${decodename}"}" data-poster="${poster}" style="--plyr-captions-text-color: #ffffff;--plyr-captions-background: #000000;">
     <source src="${url}" type="video/mp4" />
     <source src="${url}" type="video/webm" />
