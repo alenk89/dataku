@@ -882,11 +882,7 @@ function file_others(path) {
 <div class="container"><br>
 <div class="card text-center">
 <div class="card-body text-start">
-  <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
-    <a href="${p}">
-        <button type="button" class="btn btn-secondary">Back</button>
-    </a>
-  ${obj.name}</div>
+  <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><button type="button" class="btn btn-secondary">Back</button>${obj.name}</div>
 </div>
 `;
                 }
@@ -998,9 +994,7 @@ function file_video(path) {
   <div class="card text-center">
   <div class="text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
-  <a href="${p}">
-<button type="button" class="btn btn-secondary">Back</button>
-</a>
+  <button type="button" class="btn btn-secondary">Back</button>
   ${obj.name}
   </div>
   <video id="vplayer" width="100%" height="100%" playsinline controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen']; data-plyr-config="{ "title": "${decodename}"}" data-poster="${poster}" style="--plyr-captions-text-color: #ffffff;--plyr-captions-background: #000000;">
@@ -1064,9 +1058,7 @@ function file_audio(path) {
   <div class="card" style="background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);">
   <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
-  <a href="${p}">
-<button type="button" class="btn btn-secondary">Back</button>
-</a>
+  <button type="button" class="btn btn-secondary">Back</button>
   ${obj.name}
   </div>
   <br><img draggable="false" src="${UI.audioposter}" width="100%" /><br>
@@ -1175,11 +1167,7 @@ function file_pdf(path) {
   <div class="card">
   <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
-  <a href="${p}">
-<button type="button" class="btn btn-secondary">Back</button>
-</a>
-  ${obj.name}
-  </div>
+  <button type="button" class="btn btn-secondary">Back</button>${obj.name}</div>
   <div>
   <button id="prev" class="btn btn-info">Previous</button>
   <button id="next" class="btn btn-info">Next</button>
@@ -1267,8 +1255,7 @@ function file_image(path) {
   <div class="container"><br>
   <div class="card">
   <div class="card-body text-start">
-  <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
-  <button type="button" class="btn btn-secondary">Back</button>
+  <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><button type="button" class="btn btn-secondary">Back</button>
   ${obj.name}</div>
   <div>${targetText}</div><br>
   <img src="${url}" width="50%">
