@@ -993,7 +993,7 @@ function file_video(path) {
                     var poster = UI.poster;
                 }
                 var content = `
-  <div class="container text-center"><br>
+  <div class="container-fluid text-center">
   <div class="card text-center">
   <div class="text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
