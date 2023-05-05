@@ -1257,8 +1257,8 @@ function file_image(path) {
   <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
   ${obj.name}</div>
-  <div>${targetText}</div><br>
-  <img src="${url}" width="50%">
+  <div>${targetText}</div>
+  <img src="${url}" width="100%">
   </div>
 
     `;
