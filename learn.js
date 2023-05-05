@@ -24,7 +24,7 @@ function init() {
   </div>
 </div>
 <br>
-<footer class="footer mt-auto py-3 text-muted ${UI.footer_style_class}" style="${UI.fixed_footer ? 'position: fixed; ' : ''}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;${UI.hide_footer ? ' display:none;' : ' display:block;'}"> <div class="container" style="width: auto; padding: 0 10px;"> <p class="float-end"> <a href="#">Back to top</a> </p> ${UI.credit ? '<p>Redesigned with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg> by <a href="https://www.npmjs.com/package/@googledrive/index" target="_blank">TheFirstSpeedster</a>, based on Open Source Softwares.</p>' : ''} <p>© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
+<footer class="footer mt-auto py-3 text-muted ${UI.footer_style_class}" style="${UI.fixed_footer ? 'position: fixed; ' : ''}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;${UI.hide_footer ? ' display:none;' : ' display:block;'}"> <div class="container-fluid" style="width: auto; padding: 0 10px;"> <p class="float-end"> <a href="#">Back to top</a> </p> ${UI.credit ? '<p>Redesigned with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg> by <a href="https://www.npmjs.com/package/@googledrive/index" target="_blank">TheFirstSpeedster</a>, based on Open Source Softwares.</p>' : ''} <p>© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
   `;
     $('body').html(html);
 }
@@ -340,7 +340,7 @@ function requestSearch(params, resultCallback) {
 
 // Render file list
 function list(path) {
-    var content = `<div class="container">${UI.fixed_header ? '<br>' : ''}
+    var content = `<div class="container-fluid">${UI.fixed_header ? '<br>' : ''}
   <div id="update"></div>
     <div id="head_md" style="display:none; padding: 20px 20px;"></div>
     <div class="${UI.path_nav_alert_class} d-flex align-items-center" role="alert" style="margin-bottom: 0; padding-bottom: 0rem;">
@@ -608,7 +608,7 @@ function append_files_to_list(path, files) {
  */
 function render_search_result_list() {
     var content = `
-  <div class="container"><br>
+  <div class="container-fluid"><br>
   <div id="update"></div>
   <div class="card">
   <div class="${UI.path_nav_alert_class} d-flex align-items-center" role="alert" style="margin-bottom: 0;">Search Results</div>
@@ -868,7 +868,7 @@ function file_others(path) {
                 var mimeType = obj.mimeType;
                 if (mimeType == "application/vnd.google-apps.folder") {
                     var content = `
-                  <div class="container"><br>
+                  <div class="container-fluid"><br>
                   <div class="card text-center">
                   <div class="card-body text-center">
                   <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><b>${obj.name}</b> is a folder.</div>
@@ -882,7 +882,7 @@ function file_others(path) {
                   </div>`;
                 } else {
                     var content = `
-<div class="container"><br>
+<div class="container-fluid"><br>
 <div class="card text-center">
 <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">${obj.name}</div>
@@ -891,7 +891,7 @@ function file_others(path) {
                 }
             } catch (err) {
                 var content = `
-<div class="container"><br>
+<div class="container-fluid"><br>
 <div class="card text-center">
     <div class="card-body text-center">
       <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><b>404.</b> That’s an error.</div>
@@ -934,7 +934,7 @@ function file_code(path) {
                 var size = formatFileSize(obj.size);
                 var content = `
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-twilight.css" integrity="sha256-Rl83wx+fN2p2ioYpdvpWxuhAbxj+/7IwaZrKQBu/KQE=" crossorigin="anonymous">
-<div class="container"><br>
+<div class="container-fluid"><br>
 <div class="card text-center">
 <div class="card-body text-center">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">${obj.name}</div>
@@ -947,7 +947,7 @@ function file_code(path) {
 `;
             } catch (err) {
                 var content = `
-<div class="container"><br>
+<div class="container-fluid"><br>
 <div class="card text-center">
     <div class="card-body text-center">
       <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><b>404.</b> That’s an error.</div>
@@ -1027,7 +1027,7 @@ ${UI.disable_video_download ? `` : `
   `;
             } catch (err) {
                 var content = `
-<div class="container"><br>
+<div class="container-fluid"><br>
 <div class="card text-center">
     <div class="card-body text-center">
       <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><b>404.</b> That’s an error.</div>
@@ -1056,7 +1056,7 @@ function file_audio(path) {
                 var obj = jQuery.parseJSON(gdidecode(read(data)));
                 var size = formatFileSize(obj.size);
                 var content = `
-  <div class="container"><br>
+  <div class="container-fluid"><br>
   <div class="card" style="background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);">
   <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
@@ -1073,7 +1073,7 @@ function file_audio(path) {
   `;
             } catch (err) {
                 var content = `
-<div class="container"><br>
+<div class="container-fluid"><br>
 <div class="card text-center">
     <div class="card-body text-center">
       <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><b>404.</b> That’s an error.</div>
@@ -1164,7 +1164,7 @@ function file_pdf(path) {
     renderPage(pageNum);
   });
   </script>
-  <div class="container"><br>
+  <div class="container-fluid"><br>
   <div class="card">
   <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">${obj.name}</div>
@@ -1178,7 +1178,7 @@ function file_pdf(path) {
   `;
             } catch (err) {
                 var content = `
-<div class="container"><br>
+<div class="container-fluid"><br>
 <div class="card text-center">
     <div class="card-body text-center">
       <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><b>404.</b> That’s an error.</div>
@@ -1252,7 +1252,7 @@ function file_image(path) {
                 var obj = jQuery.parseJSON(gdidecode(read(data)));
                 var size = formatFileSize(obj.size);
                 var content = `
-  <div class="container"><br>
+  <div class="container-fluid"><br>
   <div class="card">
   <div class="card-body text-start">
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">
@@ -1264,7 +1264,7 @@ function file_image(path) {
     `;
             } catch (err) {
                 var content = `
-<div class="container"><br>
+<div class="container-fluid"><br>
 <div class="card text-center">
     <div class="card-body text-center">
       <div class="${UI.file_view_alert_class}" id="file_details" role="alert"><b>404.</b> That’s an error.</div>
