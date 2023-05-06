@@ -5718,7 +5718,7 @@ document.write(
     '<script src="//rawcdn.githack.com/cheems/goindex-extended/295ceaf2d64b2cb8578b21c0313d75b7bc8738a1/js/flv.min.js"></script>'
 );
 document.write(
-    '<script src="//rawcdn.githack.com/alenk89/dataku/ef588967c5bf623d71279730e290d5914e0089dc/player.js"></script>'
+    '<script src="//rawcdn.githack.com/alenk89/dataku/95835c28ff86c07111aef34667e455183e8495d8/player.js"></script>'
 );
 document.write(
     '<script src="//cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>'
