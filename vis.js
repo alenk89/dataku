@@ -6123,7 +6123,7 @@ function append_files_to_list(path, files) {
             html += `<li class="mdui-list-item file mdui-ripple" target="_blank">
             <a gd-type="${item.mimeType}" href="javascript:void(0);" onclick="this.href = '${p}'" class="${c}">
 	          <div class="col-12mdui-text-truncate" title="${item.name}">
-	          <i class="icon-folder bi bi-file-earmark-zip"></i>
+              <img src="https://i.ibb.co/XZpkLjB/film-reel.png" alt="film-reel" class="icon-folder">
 	            ${item.name}
 	          </div>
               </a>
@@ -6262,7 +6262,7 @@ function append_search_result_to_list(files) {
             <li class="mdui-list-item file mdui-ripple" target="_blank">
             <a id="${item["id"]}" gd-type="${item.mimeType}" onclick="onSearchResultItemClick(this)" class="${c}">
 	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
-	          <i class="icon-folder bi bi-file-earmark-zip"></i>
+	          <img src="https://i.ibb.co/XZpkLjB/film-reel.png" alt="film-reel" class="icon-folder">
 	            ${item.name}
 	          </div>
               </a>   
