@@ -6426,19 +6426,6 @@ function file_code(path) {
 <div class="mdui-container-fluid">
 <pre id="editor" ></pre>
 </div>
-<div class="mdui-textfield">
-	<label class="mdui-textfield-label">File Name</label>
-	<input class="mdui-textfield-input" type="text" value="${file_name}"/>
-</div>
-<div class="mdui-textfield">
-	<label class="mdui-textfield-label">Download Link</label>
-	<input class="mdui-textfield-input" type="text" value="${href}"/>
-</div>
-<a href="${href}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent">
-<i class="mdui-icon bi bi-download"></i>
-Download
-</a>
-
 <script src="//cdn.jsdelivr.net/gh/cheems/goindex-extended/js/ace.js"></script>
 <script src="//cdn.jsdelivr.net/gh/cheems/goindex-extended/js/ext-language_tools.js"></script>
 	`;
@@ -6509,16 +6496,7 @@ function file_video(path) {
 	<div class="mdui-video-fluid mdui-center" id="dplayer"></div>
 	<br>${playBtn}
 	<!-- ???? -->
-  <div class="mdui-textfield">
-	  <label class="mdui-textfield-label">File Name</label>
-	  <input class="mdui-textfield-input" type="text" value="${file_name}"/>
-  </div>
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">Download Link</label>
-	  <input class="mdui-textfield-input" type="text" value="${url}"/>
-	</div>
 </div>
-<a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
 	`;
     $("#content").html(content);
     $("#copy-link").on("click", () => {
@@ -6552,16 +6530,6 @@ function file_audio(path) {
 	</audio>
 	<br>
 	<!-- ???? -->
-  <div class="mdui-textfield">
-	  <label class="mdui-textfield-label">File Name</label>
-	  <input class="mdui-textfield-input" type="text" value="${file_name}"/>
-  </div>
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">Download Link</label>
-	  <input class="mdui-textfield-input" type="text" value="${url}"/>
-	</div>
-</div>
-<a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
 	`;
     $("#content").html(content);
 }
@@ -6577,15 +6545,6 @@ function file_pdf(path) {
 	<object data="${inline_url}" type="application/pdf" name="${file_name}" style="width:100%;height:94vh;"><embed src="${inline_url}" type="application/pdf"/></object>
   <br>
 	<!-- ???? -->
-  <div class="mdui-textfield">
-	  <label class="mdui-textfield-label">File Name</label>
-	  <input class="mdui-textfield-input" type="text" value="${display_name}"/>
-  </div>
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">Download Link</label>
-	  <input class="mdui-textfield-input" type="text" value="${url}"/>
-	</div>
-  <a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
 	`;
     $("#content")
         .removeClass("mdui-container-fluid")
@@ -6646,18 +6605,6 @@ function file_image(path) {
         ${targetText}
 	    <img class="mdui-img-fluid" src="${url}"/>
     </div>
-	<br>
-  <div class="mdui-textfield">
-	  <label class="mdui-textfield-label">File Name</label>
-	  <input class="mdui-textfield-input" type="text" value="${file_name}"/>
-  </div>
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">Download Link</label>
-	  <input class="mdui-textfield-input" type="text" value="${url}"/>
-	</div>
-        <br>
-</div>
-<a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
     `;
     $("#content").html(content);
     $("#leftBtn, #rightBtn").click((e) => {
