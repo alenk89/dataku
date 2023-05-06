@@ -5730,7 +5730,6 @@ function list(path) {
 	    <div class="mdui-col-sm-2 text-center">
 	     Size
 	    </div>
-      <div class="mdui-col-sm-2 text-center">
     Actions
     </div>  
 	    </li> 
@@ -5839,7 +5838,6 @@ function append_files_to_list(path, files) {
                 </a>
 	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
 	            <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
-              <div class="mdui-col-sm-2 text-center">
               </div>
 	        </li>`;
         } else {
@@ -5879,12 +5877,6 @@ function append_files_to_list(path, files) {
               </a>
 	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
 	          <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
-	          
-            <div class="mdui-col-sm-2 text-center">
-	            <button onclick="window.open('${ddl_link}','_self')" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Download">
-                <i class="icon-dl bi bi-download"></i>
-              </button>
-            </div>
 	      </li>`;
         }
     }
