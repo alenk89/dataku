@@ -5986,16 +5986,7 @@ function requestSearch(params, resultCallback) {
 }
 
 function list(path) {
-    var content = `
-	 <div class="mdui-row"> 
-	  <ul class="mdui-list"> 
-	   <li class="mdui-list-item th"> 
-            <div class="col-12">
-                Description
-            </div> 
-	    </li> 
-	  </ul> 
-	 </div> 
+    var content = ` 
 	 <div class="mdui-row"> 
 	  <ul id="list" class="mdui-list"> 
 	  </ul> 
@@ -6168,16 +6159,6 @@ function append_files_to_list(path, files) {
 function render_search_result_list() {
     var content = `
 	<div id="head_md" class="mdui-typo" style="display:none;padding: 20px 0;"></div>
-
-	 <div class="mdui-row"> 
-	  <ul class="mdui-list"> 
-	   <li class="mdui-list-item th"> 
-	    <div class="col-12">
-	     Description
-	    </div> 
-	    </li> 
-	  </ul> 
-	 </div> 
 	 <div class="mdui-row"> 
 	  <ul id="list" class="mdui-list"> 
 	  </ul> 
