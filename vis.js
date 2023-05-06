@@ -6085,7 +6085,7 @@ function append_files_to_list(path, files) {
             html += `
             <li class="mdui-list-item mdui-ripple">
             <a href="javascript:void(0);" onclick="this.href = '${p}'" class="folder col-12">
-	            <div class="mdui-text-truncate" title="${item.name}">
+	            <div class="jarak mdui-text-truncate" title="${item.name}">
 	            <i class="icon-folder bi bi-folder2-open"></i>
                     ${item.name}
                 </div>
@@ -6122,7 +6122,7 @@ function append_files_to_list(path, files) {
             }
             html += `<li class="mdui-list-item file mdui-ripple" target="_blank">
             <a gd-type="${item.mimeType}" href="javascript:void(0);" onclick="this.href = '${p}'" class="${c}">
-	          <div class="col-12mdui-text-truncate" title="${item.name}">
+	          <div class="col-12 jarak mdui-text-truncate" title="${item.name}">
               <img src="https://i.ibb.co/XZpkLjB/film-reel.png" alt="film-reel" class="icon-folder">
 	            ${item.name}
 	          </div>
@@ -6239,7 +6239,7 @@ function append_search_result_to_list(files) {
         item.size = formatFileSize(item.size);
         if (item.mimeType == "application/vnd.google-apps.folder") {
             html += `<li class="mdui-list-item mdui-ripple"><a id="${item["id"]}" onclick="onSearchResultItemClick(this)" class="folder col-12">
-	            <div class="mdui-text-truncate" title="${item.name}">
+	            <div class="jarak mdui-text-truncate" title="${item.name}">
 	            <i class="icon-folder bi bi-folder2-open"></i>
                     ${item.name}
                 </div>
