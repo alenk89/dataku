@@ -6334,7 +6334,18 @@ function file_pdf(path) {
     var display_name = decodeURIComponent(path.trim("/").split("/").slice(-1)[0].replaceAll("%5C%5C", "%5C"));
     var content = `
 	<object data="${inline_url}" type="application/pdf" name="${file_name}" style="width:100%;height:94vh;">
-    <embed src="${inline_url}" type="application/pdf"/></object>
+    <embed src="${inline_url}" type="application/pdf" />
+    <style>
+    #end {
+        display: none;
+        justify-content: flex-end;
+        padding-inline-start: 20px;
+        text-align: end;
+        white-space: nowrap;
+    }
+    </style>
+
+    </object>
 	`;
     $("#content")
         .removeClass("mdui-container")
