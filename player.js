@@ -1416,7 +1416,7 @@
              !e.subtitle.fontSize && (e.subtitle.fontSize = "20px"), 
              !e.subtitle.bottom && (e.subtitle.bottom = "40px"), 
              !e.subtitle.color && (e.subtitle.color = "#fff")), 
-             e.video.quality && (e.video.url = e.video.quality[e.video.defaultQuality]), 
+             e.video.quality && (e.video.url = e.video.quality[e.video.defaultQuality].url), 
              e.lang && (e.lang = e.lang.toLowerCase()), e.contextmenu = e.contextmenu.concat([{
                 text: "Video info",
                 click: function (e) {
