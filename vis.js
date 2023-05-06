@@ -5944,7 +5944,7 @@ function nav(path) {
                 }
                 html += `
                 <i class="mdui-icon material-icons mdui-icon-dark folder" style="margin:0;">chevron_right</i>
-                <a class="folder" style="background-color:transparent;max-width:230px" title="${n}" href="javascript:void(0);" onclick="this.href = '/${cur}:${p}'">${n}</a>
+                <a class="folder" style="background-color:transparent;" title="${n}" href="javascript:void(0);" onclick="this.href = '/${cur}:${p}'">${n}</a>
                 `;
             }
         }
@@ -6099,14 +6099,12 @@ function append_files_to_list(path, files) {
         if (item.mimeType == "application/vnd.google-apps.folder") {
             html += `
             <li class="mdui-list-item mdui-ripple">
-            <a href="javascript:void(0);" onclick="this.href = '${p}'" class="folder">
-	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
+            <a href="javascript:void(0);" onclick="this.href = '${p}'" class="folder col-12">
+	            <div class="mdui-text-truncate" title="${item.name}">
 	            <i class="icon-folder bi bi-folder2-open"></i>
                     ${item.name}
                 </div>
                 </a>
-	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	            <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
               </div>
 	        </li>`;
         } else {
@@ -6139,13 +6137,11 @@ function append_files_to_list(path, files) {
             }
             html += `<li class="mdui-list-item file mdui-ripple" target="_blank">
             <a gd-type="${item.mimeType}" href="javascript:void(0);" onclick="this.href = '${p}'" class="${c}">
-	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
+	          <div class="col-12mdui-text-truncate" title="${item.name}">
 	          <i class="icon-folder bi bi-file-earmark-zip"></i>
 	            ${item.name}
 	          </div>
               </a>
-	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	          <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
 	      </li>`;
         }
     }
@@ -6273,15 +6269,12 @@ function append_search_result_to_list(files) {
         item.modifiedTime = utc2local(item.modifiedTime);
         item.size = formatFileSize(item.size);
         if (item.mimeType == "application/vnd.google-apps.folder") {
-            html += `<li class="mdui-list-item mdui-ripple"><a id="${item["id"]}" onclick="onSearchResultItemClick(this)" class="folder">
-	            <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
+            html += `<li class="mdui-list-item mdui-ripple"><a id="${item["id"]}" onclick="onSearchResultItemClick(this)" class="folder col-12">
+	            <div class="mdui-text-truncate" title="${item.name}">
 	            <i class="icon-folder bi bi-folder2-open"></i>
                     ${item.name}
                 </div>
                 </a>
-	            <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	            <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
-	            
 	        </li>`;
         } else {
             var c = "file";
@@ -6303,10 +6296,7 @@ function append_search_result_to_list(files) {
 	          <i class="icon-folder bi bi-file-earmark-zip"></i>
 	            ${item.name}
 	          </div>
-              </a>
-	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
-	          <div class="mdui-col-sm-2 text-center">${item["size"]}</div>
-	          
+              </a>   
 	      </li>`;
         }
     }
